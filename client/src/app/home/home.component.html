@@ -1,0 +1,19 @@
+<div class="container-fluid">
+  <div class="row" style = "margin-top:50px">
+    <div class="col-lg-7 col-lg-offset-2" style="background-color : #C4B2A9; height : 80px">
+      <div class="row" style="margin-top:20px">
+        <div class="col-lg-3">
+          <select [(ngModel)]="selectedCategory" style="height:40px;width:100%">
+            <option *ngFor = "let category of categories" [value] = "category">{{category}}</option>
+          </select>
+        </div>
+        <div class="col-lg-7">
+          <input type="text" [(ngModel)]="location" placeholder="Type location to search" style="height:40px;width:100%;">
+        </div>
+        <div class="col-lg-2">
+          <button class="btn btn-primary" (click)="SearchClassifieds()" style="height:40px;width:100%">Search</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

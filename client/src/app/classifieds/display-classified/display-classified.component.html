@@ -1,0 +1,10 @@
+<div class = "container">
+  <div class = "row" *ngFor="let classified of classifieds">
+    <div class = "col-lg-8 offset-lg-2"style="border:1px solid black; margin-top:1px">
+      Description : <b>{{classified.description}}</b><br>
+      Location : <b>{{classified.location}}</b><br>
+      Price: <b>{{classified.price}}</b><br>
+      Category : <b>{{classified.category}}</b>
+    </div>
+  </div>
+</div>

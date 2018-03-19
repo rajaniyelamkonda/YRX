@@ -1,0 +1,48 @@
+<form #newClassified="ngForm" enctype="multipart/form-data">
+  <div class="container-fluid">
+    <div class="row">
+      <div class = "col-lg-2 col-lg-offset-2">
+        <p> new Classified </p>
+      </div>
+      <div class="row">
+      <div class="col-lg-6 col-lg-offset-2" style="border:1px solid black;">
+        <div class="row" style="margin-top:10px">
+          <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+            <div class="form-group">
+              <label for="catgories">Category :</label>
+              <select class="form-control" name="category" [(ngModel)]="classified.category" id="catgoryList">
+                <option *ngFor = "let category of categories" [value] = "category">{{category}}</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="basicDetails">Decription : </label>
+              <input type="text" name="description" class="form-control col-lg-5" id="basicDetails" [(ngModel)]="classified.description"
+                required>
+            </div>
+            <div class="form-group">
+              <label for="location">Location :</label>
+              <input type="text" name="location" class="form-control col-lg-5" id="location" [(ngModel)]="classified.location" required>
+            </div>
+            <div class="form-group">
+              <label for="price">Price : </label>
+              <input type="text" name="price" class="form-control" id="price" [(ngModel)]="classified.price" required>
+            </div>
+          </div>
+          <div class="col-lg-4">
+            <label for="image">Upload Image:</label>
+            <input class="form-control" name="file" type="file" id="file" multiple (change)="OnUpload($event)" accept="image/*">
+            <div [style.display] = "displayImage">
+              <img id="img" src="#" alt="Image" style="width:150px;height:150px"/>
+              <button type = "button" class = "btn btn-primary" (click) = "DeleteImage()">Delete Image</button>
+            </div>
+          </div>
+        </div>
+        <div class="row" style =  "margin-bottom:15px">
+            <button class="btn btn-primary col-lg-2 col-lg-offset-4 col-md-2 col-md-offset-5 col-sm-4 col-sm-offset-4 col-xs-6 col-xs-offset-2"
+              type="submit" (click)="SubmitClassified(newClassified)">Submit Add</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+</form>
